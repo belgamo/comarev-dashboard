@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const theme = createTheme({
   palette: {
     primary: blue,
+    link: '#2196f3',
     warning: {
       light: '#F5A299',
       main: '#EA351F',

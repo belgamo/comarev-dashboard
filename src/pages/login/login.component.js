@@ -3,7 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
@@ -14,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from 'store/modules/user/actions';
+import { Box } from '@material-ui/core';
 
 const FORM_ERROR_INITIAL_STATE = {
   email: false,
@@ -37,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+  },
+  forgetPasswordLink: {
+    color: theme.palette.link,
+    cursor: 'pointer',
   },
 }));
 
@@ -148,9 +152,13 @@ const SignIn = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href='#' variant='body2'>
+              <Box
+                variant='body2'
+                onClick={() => history.push('/recover-password')}
+                className={classes.forgetPasswordLink}
+              >
                 Esqueceu sua senha?
-              </Link>
+              </Box>
             </Grid>
           </Grid>
         </form>

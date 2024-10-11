@@ -15,6 +15,8 @@ import InvoiceRegister from 'pages/invoices/invoice-register.component';
 import InvoiceView from 'pages/invoices/invoices-view.component';
 import InvoiceEdit from 'pages/invoices/invoice-edit.component';
 import Scanner from 'pages/scanner/scanner.component';
+import RecoverPassword from 'pages/password-recovery/password-recovery.component';
+import ResetPassword from 'pages/reset-password/reset-password.component';
 
 const Routes = () => {
   return (
@@ -52,6 +54,18 @@ const Routes = () => {
           component={UserRegister}
           roles={['admin']}
         />
+        {/* recovery password flow */}
+        <Route
+          path='/recover-password'
+          exact
+          component={RecoverPassword}
+        />
+        <Route
+          path='/reset-password/:token'
+          exact
+          component={ResetPassword}
+        />
+        {/* recovery password flow */}
         <SecureRoute
           path='/users/:id'
           exact
