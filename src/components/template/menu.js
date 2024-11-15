@@ -2,6 +2,7 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import ReceiptIcon from '@material-ui/icons/Receipt';
 import QrCode2 from '@mui/icons-material/QrCode2';
 import SupervisorAccountOutlinedIcon from '@material-ui/icons/SupervisorAccountOutlined';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import HomeIcon from '@material-ui/icons/Home';
 import DiscountRequestsIcon from '@mui/icons-material/QrCodeScanner';
 
@@ -36,5 +37,11 @@ export const menu = [
     path: '?qrcode',
     icon: QrCode2,
     roles: ['manager', 'admin'],
+  },
+  {
+    label: 'Convidar novo empregado',
+    path: '/invite-employee',
+    icon: PersonAddIcon,
+    roles: ['manager'],
   },
 ];
